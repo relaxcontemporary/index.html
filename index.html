@@ -6,12 +6,12 @@
     <title>MILESTONEDEVELOPMENT</title>
     <meta
       name="description"
-      content="MILESTONEDEVELOPMENT presents a concise and elegant company landing page with a premium real estate visual language."
+      content="MILESTONEDEVELOPMENT bilingual landing page in English and Georgian."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+Georgian:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -19,7 +19,6 @@
         --bg: #111111;
         --bg-soft: #171717;
         --panel: rgba(255, 255, 255, 0.05);
-        --panel-strong: rgba(255, 255, 255, 0.08);
         --text: #ffffff;
         --muted: rgba(255, 255, 255, 0.72);
         --soft: rgba(255, 255, 255, 0.5);
@@ -28,35 +27,16 @@
         --container: 1240px;
       }
 
-      * {
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
       body {
         margin: 0;
-        font-family: "Inter", sans-serif;
+        font-family: "Inter", "Noto Sans Georgian", sans-serif;
         background: var(--bg);
         color: var(--text);
       }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      img {
-        display: block;
-        max-width: 100%;
-      }
-
-      .container {
-        width: min(calc(100% - 48px), var(--container));
-        margin: 0 auto;
-      }
+      a { color: inherit; text-decoration: none; }
+      .container { width: min(calc(100% - 48px), var(--container)); margin: 0 auto; }
 
       .hero {
         position: relative;
@@ -64,7 +44,6 @@
         overflow: hidden;
         background: #0f0f0f;
       }
-
       .hero::before {
         content: "";
         position: absolute;
@@ -74,7 +53,6 @@
           linear-gradient(to bottom, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.76));
         z-index: 1;
       }
-
       .hero::after {
         content: "";
         position: absolute;
@@ -86,39 +64,52 @@
         transform: scale(1.03);
       }
 
-      .topbar,
-      .hero-grid {
-        position: relative;
-        z-index: 2;
-      }
-
-      .topbar {
-        padding: 28px 0;
-      }
-
+      .topbar, .hero-grid { position: relative; z-index: 2; }
+      .topbar { padding: 28px 0; }
       .topbar-inner {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 24px;
       }
-
       .brand {
         font-size: 13px;
         letter-spacing: 0.34em;
         text-transform: uppercase;
         color: rgba(255, 255, 255, 0.85);
       }
-
+      .topbar-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
       .nav {
         display: flex;
         gap: 28px;
         font-size: 14px;
         color: rgba(255, 255, 255, 0.75);
       }
+      .nav a:hover { color: #fff; }
 
-      .nav a:hover {
-        color: #fff;
+      .lang-switch {
+        display: inline-flex;
+        border: 1px solid rgba(255,255,255,0.16);
+        border-radius: 999px;
+        overflow: hidden;
+        background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(8px);
+      }
+      .lang-btn {
+        border: 0;
+        background: transparent;
+        color: rgba(255,255,255,0.75);
+        padding: 10px 14px;
+        cursor: pointer;
+        font: inherit;
+      }
+      .lang-btn.active {
+        background: #fff;
+        color: #111;
       }
 
       .hero-grid {
@@ -129,7 +120,6 @@
         gap: 48px;
         padding: 40px 0 72px;
       }
-
       .eyebrow {
         display: inline-flex;
         align-items: center;
@@ -143,14 +133,7 @@
         text-transform: uppercase;
         color: rgba(255, 255, 255, 0.76);
       }
-
-      h1,
-      h2,
-      h3,
-      p {
-        margin: 0;
-      }
-
+      h1, h2, h3, p { margin: 0; }
       h1 {
         margin-top: 22px;
         max-width: 900px;
@@ -159,7 +142,6 @@
         font-weight: 300;
         letter-spacing: -0.04em;
       }
-
       .hero-copy {
         max-width: 640px;
         margin-top: 24px;
@@ -167,14 +149,12 @@
         line-height: 1.8;
         color: var(--muted);
       }
-
       .hero-actions {
         display: flex;
         gap: 16px;
         flex-wrap: wrap;
         margin-top: 36px;
       }
-
       .button {
         display: inline-flex;
         align-items: center;
@@ -186,53 +166,34 @@
         font-weight: 500;
         transition: 0.25s ease;
       }
-
-      .button-primary {
-        background: #fff;
-        color: #111;
-      }
-
-      .button-primary:hover {
-        opacity: 0.9;
-      }
-
+      .button-primary { background: #fff; color: #111; }
       .button-secondary {
         border: 1px solid rgba(255, 255, 255, 0.18);
         background: rgba(255, 255, 255, 0.05);
         backdrop-filter: blur(10px);
       }
 
-      .button-secondary:hover {
-        background: rgba(255, 255, 255, 0.1);
-      }
-
-      .statement-card {
+      .statement-card, .contact-card, .approach-card {
         border-radius: 32px;
         padding: 28px;
         border: 1px solid rgba(255, 255, 255, 0.12);
         background: rgba(255, 255, 255, 0.05);
         backdrop-filter: blur(16px);
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
       }
-
-      .card-label,
-      .section-label,
-      .project-type {
+      .card-label, .section-label, .project-type {
         font-size: 12px;
         letter-spacing: 0.28em;
         text-transform: uppercase;
         color: rgba(255, 255, 255, 0.54);
       }
-
-      .statement-card p:nth-child(2) {
+      .statement-main {
         margin-top: 18px;
         font-size: 30px;
         line-height: 1.4;
         font-weight: 300;
         color: rgba(255, 255, 255, 0.96);
       }
-
-      .statement-card p:last-child {
+      .statement-sub {
         margin-top: 28px;
         padding-top: 22px;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -240,28 +201,15 @@
         line-height: 1.7;
       }
 
-      .stats {
-        border-top: 1px solid var(--line);
-        background: #161616;
-      }
-
+      .stats { border-top: 1px solid var(--line); background: #161616; }
       .stats-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 1px;
         background: var(--line);
       }
-
-      .stat {
-        background: #161616;
-        padding: 40px 28px;
-      }
-
-      .stat-value {
-        font-size: 42px;
-        font-weight: 300;
-      }
-
+      .stat { background: #161616; padding: 40px 28px; }
+      .stat-value { font-size: 42px; font-weight: 300; }
       .stat-label {
         margin-top: 10px;
         font-size: 13px;
@@ -270,103 +218,62 @@
         color: var(--soft);
       }
 
-      .section {
-        padding: 108px 0;
-      }
-
-      .about-grid,
-      .approach-grid {
+      .section { padding: 108px 0; }
+      .about-grid, .approach-grid {
         display: grid;
         grid-template-columns: 0.9fr 1.1fr;
         gap: 64px;
         align-items: start;
       }
-
       .section-title {
         margin-top: 18px;
         font-size: clamp(34px, 4vw, 58px);
         line-height: 1.08;
         font-weight: 300;
       }
-
       .section-text-large {
         font-size: 20px;
         line-height: 1.85;
         color: var(--muted);
       }
-
       .section-text {
         margin-top: 20px;
         font-size: 16px;
         line-height: 1.95;
         color: var(--muted);
       }
-
-      .projects-header {
-        margin-bottom: 40px;
-      }
-
+      .projects-header { margin-bottom: 40px; }
       .projects-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 24px;
       }
-
       .project-card {
         overflow: hidden;
         border-radius: 32px;
         border: 1px solid rgba(255, 255, 255, 0.1);
         background: #181818;
-        transition: transform 0.25s ease, border-color 0.25s ease;
       }
-
-      .project-card:hover {
-        transform: translateY(-6px);
-        border-color: rgba(255, 255, 255, 0.22);
-      }
-
       .project-image {
         height: 290px;
         background-size: cover;
         background-position: center;
       }
-
-      .project-content {
-        padding: 26px;
-      }
-
-      .project-title {
-        margin-top: 14px;
-        font-size: 30px;
-        font-weight: 300;
-      }
-
+      .project-content { padding: 26px; }
+      .project-title { margin-top: 14px; font-size: 30px; font-weight: 300; }
       .project-copy {
         margin-top: 16px;
         color: rgba(255, 255, 255, 0.66);
         line-height: 1.8;
       }
-
       .approach-band {
         padding: 84px 0;
         border-top: 1px solid var(--line);
         border-bottom: 1px solid var(--line);
         background: #151515;
       }
-
-      .approach-card {
-        border-radius: 28px;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        background: rgba(255, 255, 255, 0.05);
-        padding: 28px;
-        color: rgba(255, 255, 255, 0.66);
-        line-height: 1.9;
-      }
-
       .contact-card {
-        border-radius: 32px;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+        background: linear-gradient(to bottom right, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
         padding: 42px;
       }
 
@@ -375,62 +282,29 @@
         transform: translateY(26px);
         transition: opacity 0.8s ease, transform 0.8s ease;
       }
+      .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-      .fade-in.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      [data-lang] { display: none; }
+      html[lang-mode="en"] [data-lang="en"],
+      html[lang-mode="ka"] [data-lang="ka"] { display: inline; }
+      html[lang-mode="en"] [data-lang-block="en"],
+      html[lang-mode="ka"] [data-lang-block="ka"] { display: block; }
+      html[lang-mode="en"] [data-lang-flex="en"],
+      html[lang-mode="ka"] [data-lang-flex="ka"] { display: flex; }
 
       @media (max-width: 1024px) {
-        .hero-grid,
-        .about-grid,
-        .approach-grid,
-        .projects-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .stats-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .hero-grid {
-          padding-bottom: 56px;
-        }
+        .hero-grid, .about-grid, .approach-grid, .projects-grid { grid-template-columns: 1fr; }
+        .stats-grid { grid-template-columns: repeat(2, 1fr); }
       }
-
       @media (max-width: 720px) {
-        .container {
-          width: min(calc(100% - 32px), var(--container));
-        }
-
-        .topbar-inner {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        .nav {
-          gap: 18px;
-          flex-wrap: wrap;
-        }
-
-        .stats-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .section,
-        .approach-band {
-          padding: 76px 0;
-        }
-
-        .contact-card,
-        .statement-card,
-        .approach-card {
-          padding: 26px;
-        }
-
-        .project-image {
-          height: 240px;
-        }
+        .container { width: min(calc(100% - 32px), var(--container)); }
+        .topbar-inner { flex-direction: column; align-items: flex-start; }
+        .topbar-right { flex-direction: column; align-items: flex-start; }
+        .nav { gap: 18px; flex-wrap: wrap; }
+        .stats-grid { grid-template-columns: 1fr; }
+        .section, .approach-band { padding: 76px 0; }
+        .contact-card, .statement-card, .approach-card { padding: 26px; }
+        .project-image { height: 240px; }
       }
     </style>
   </head>
@@ -439,36 +313,49 @@
       <div class="topbar">
         <div class="container topbar-inner">
           <div class="brand">MILESTONEDEVELOPMENT</div>
-          <nav class="nav">
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-          </nav>
+          <div class="topbar-right">
+            <nav class="nav">
+              <a href="#about"><span data-lang="en">About</span><span data-lang="ka">შესახებ</span></a>
+              <a href="#projects"><span data-lang="en">Projects</span><span data-lang="ka">პროექტები</span></a>
+              <a href="#contact"><span data-lang="en">Contact</span><span data-lang="ka">კონტაქტი</span></a>
+            </nav>
+            <div class="lang-switch">
+              <button class="lang-btn active" data-set-lang="en">ENG</button>
+              <button class="lang-btn" data-set-lang="ka">GEO</button>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="container hero-grid">
         <div class="fade-in">
-          <div class="eyebrow">Milestone Development</div>
+          <div class="eyebrow">
+            <span data-lang="en">Milestone Development</span>
+            <span data-lang="ka">Milestone Development</span>
+          </div>
           <h1>
-            MILESTONEDEVELOPMENT creates distinctive spaces with clarity, ambition, and lasting value.
+            <span data-lang="en">MILESTONEDEVELOPMENT creates distinctive spaces with clarity, ambition, and lasting value.</span>
+            <span data-lang="ka">MILESTONEDEVELOPMENT ქმნის გამორჩეულ სივრცეებს სიცხადით, ამბიციით და გრძელვადიანი ღირებულებით.</span>
           </h1>
           <p class="hero-copy">
-            A concise landing page that presents the company with confidence and a premium development aesthetic.
+            <span data-lang="en">A concise landing page that presents the company with confidence and a premium development aesthetic.</span>
+            <span data-lang="ka">კომპანიის მოკლე და თავდაჯერებული წარდგენა პრემიუმ დეველოპერული ესთეტიკით.</span>
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#projects">Explore Projects</a>
-            <a class="button button-secondary" href="#contact">Request Presentation</a>
+            <a class="button button-primary" href="#projects"><span data-lang="en">Explore Projects</span><span data-lang="ka">პროექტების ნახვა</span></a>
+            <a class="button button-secondary" href="#contact"><span data-lang="en">Request Presentation</span><span data-lang="ka">პრეზენტაციის მოთხოვნა</span></a>
           </div>
         </div>
 
         <div class="statement-card fade-in">
-          <p class="card-label">Featured statement</p>
-          <p>
-            We shape development projects with a modern vision, strong identity, and attention to every detail.
+          <p class="card-label"><span data-lang="en">Featured statement</span><span data-lang="ka">მთავარი გზავნილი</span></p>
+          <p class="statement-main">
+            <span data-lang="en">We shape development projects with a modern vision, strong identity, and attention to every detail.</span>
+            <span data-lang="ka">ჩვენ ვქმნით დეველოპერულ პროექტებს თანამედროვე ხედვით, ძლიერი იდენტობით და თითოეულ დეტალზე ყურადღებით.</span>
           </p>
-          <p>
-            Use this block for your mission, a founder note, or a short message about your development focus.
+          <p class="statement-sub">
+            <span data-lang="en">Use this block for your mission, a founder note, or a short message about your development focus.</span>
+            <span data-lang="ka">ეს ბლოკი გამოიყენეთ მისიისთვის, დამფუძნებლის გზავნილისთვის ან თქვენი ძირითადი მიმართულების მოკლე აღწერისთვის.</span>
           </p>
         </div>
       </div>
@@ -478,19 +365,19 @@
       <div class="container stats-grid">
         <div class="stat fade-in">
           <div class="stat-value">20+</div>
-          <div class="stat-label">Years of vision</div>
+          <div class="stat-label"><span data-lang="en">Years of vision</span><span data-lang="ka">წლების გამოცდილება</span></div>
         </div>
         <div class="stat fade-in">
           <div class="stat-value">15</div>
-          <div class="stat-label">Signature projects</div>
+          <div class="stat-label"><span data-lang="en">Signature projects</span><span data-lang="ka">მთავარი პროექტები</span></div>
         </div>
         <div class="stat fade-in">
           <div class="stat-value">8</div>
-          <div class="stat-label">Cities considered</div>
+          <div class="stat-label"><span data-lang="en">Cities considered</span><span data-lang="ka">ქალაქები</span></div>
         </div>
         <div class="stat fade-in">
           <div class="stat-value">100%</div>
-          <div class="stat-label">Detail-driven approach</div>
+          <div class="stat-label"><span data-lang="en">Detail-driven approach</span><span data-lang="ka">დეტალებზე ორიენტირებული მიდგომა</span></div>
         </div>
       </div>
     </section>
@@ -498,17 +385,20 @@
     <section class="section" id="about">
       <div class="container about-grid">
         <div class="fade-in">
-          <p class="section-label">About</p>
+          <p class="section-label"><span data-lang="en">About</span><span data-lang="ka">შესახებ</span></p>
           <h2 class="section-title">
-            A concise company presentation with a premium visual language.
+            <span data-lang="en">A concise company presentation with a premium visual language.</span>
+            <span data-lang="ka">კომპანიის მოკლე პრეზენტაცია პრემიუმ ვიზუალური ენით.</span>
           </h2>
         </div>
         <div class="fade-in">
           <p class="section-text-large">
-            This landing page is built to present MILESTONEDEVELOPMENT clearly and elegantly through strong typography, spacious layout, and a refined visual atmosphere.
+            <span data-lang="en">This landing page is built to present MILESTONEDEVELOPMENT clearly and elegantly through strong typography, spacious layout, and a refined visual atmosphere.</span>
+            <span data-lang="ka">ეს landing page შექმნილია იმისთვის, რომ MILESTONEDEVELOPMENT ნათლად და ელეგანტურად წარმოაჩინოს ძლიერი ტიპოგრაფიით, ფართო განლაგებით და დახვეწილი ვიზუალური ატმოსფეროთი.</span>
           </p>
           <p class="section-text">
-            You can keep it simple as a company introduction page, or expand it later with project pages, investor information, and more contact options.
+            <span data-lang="en">You can keep it simple as a company introduction page, or expand it later with project pages, investor information, and more contact options.</span>
+            <span data-lang="ka">შეგიძლიათ დატოვოთ როგორც კომპანიის მოკლე წარდგენის გვერდი, ან მოგვიანებით გააფართოვოთ პროექტების გვერდებით, საინვესტიციო ინფორმაციით და დამატებითი საკონტაქტო ვარიანტებით.</span>
           </p>
         </div>
       </div>
@@ -517,49 +407,43 @@
     <section class="section" id="projects">
       <div class="container">
         <div class="projects-header fade-in">
-          <p class="section-label">Selected work</p>
-          <h2 class="section-title">Signature projects</h2>
+          <p class="section-label"><span data-lang="en">Selected work</span><span data-lang="ka">რჩეული ნამუშევრები</span></p>
+          <h2 class="section-title"><span data-lang="en">Signature projects</span><span data-lang="ka">მთავარი პროექტები</span></h2>
         </div>
 
         <div class="projects-grid">
           <article class="project-card fade-in">
-            <div
-              class="project-image"
-              style="background-image: url('https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80');"
-            ></div>
+            <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80');"></div>
             <div class="project-content">
-              <div class="project-type">Residential</div>
+              <div class="project-type"><span data-lang="en">Residential</span><span data-lang="ka">საცხოვრებელი</span></div>
               <h3 class="project-title">Skyline Residence</h3>
               <p class="project-copy">
-                High-design living spaces shaped around light, proportion, and city views.
+                <span data-lang="en">High-design living spaces shaped around light, proportion, and city views.</span>
+                <span data-lang="ka">მაღალი სტანდარტის საცხოვრებელი სივრცეები, შექმნილი სინათლის, პროპორციის და ქალაქის ხედების გარშემო.</span>
               </p>
             </div>
           </article>
 
           <article class="project-card fade-in">
-            <div
-              class="project-image"
-              style="background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80');"
-            ></div>
+            <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80');"></div>
             <div class="project-content">
-              <div class="project-type">Commercial</div>
+              <div class="project-type"><span data-lang="en">Commercial</span><span data-lang="ka">კომერციული</span></div>
               <h3 class="project-title">Avenue Tower</h3>
               <p class="project-copy">
-                A modern landmark built with premium materials and timeless restraint.
+                <span data-lang="en">A modern landmark built with premium materials and timeless restraint.</span>
+                <span data-lang="ka">თანამედროვე არქიტექტურული სიმბოლო პრემიუმ მასალებით და დროში გამძლე ესთეტიკით.</span>
               </p>
             </div>
           </article>
 
           <article class="project-card fade-in">
-            <div
-              class="project-image"
-              style="background-image: url('https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1200&q=80');"
-            ></div>
+            <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1200&q=80');"></div>
             <div class="project-content">
-              <div class="project-type">Mixed-Use</div>
+              <div class="project-type"><span data-lang="en">Mixed-Use</span><span data-lang="ka">მრავალფუნქციური</span></div>
               <h3 class="project-title">Park Collection</h3>
               <p class="project-copy">
-                A destination where architecture, hospitality, and lifestyle converge.
+                <span data-lang="en">A destination where architecture, hospitality, and lifestyle converge.</span>
+                <span data-lang="ka">სივრცე, სადაც ერთიანდება არქიტექტურა, სტუმარმასპინძლობა და ცხოვრების სტილი.</span>
               </p>
             </div>
           </article>
@@ -570,17 +454,16 @@
     <section class="approach-band">
       <div class="container approach-grid">
         <div class="fade-in">
-          <p class="section-label">Approach</p>
-          <h2 class="section-title">Clarity, atmosphere, and premium positioning.</h2>
+          <p class="section-label"><span data-lang="en">Approach</span><span data-lang="ka">მიდგომა</span></p>
+          <h2 class="section-title"><span data-lang="en">Clarity, atmosphere, and premium positioning.</span><span data-lang="ka">სიცხადე, ატმოსფერო და პრემიუმ პოზიციონირება.</span></h2>
           <p class="section-text">
-            The structure is intentionally simple: hero, credibility, story, featured work, and one strong call to action. That makes it ideal for a landing page where visitors understand the company in seconds.
+            <span data-lang="en">The structure is intentionally simple: hero, credibility, story, featured work, and one strong call to action.</span>
+            <span data-lang="ka">სტრუქტურა განზრახ მარტივია: მთავარი ვიზუალი, სანდოობა, ისტორია, რჩეული პროექტები და ერთი ძლიერი მოწოდება მოქმედებისკენ.</span>
           </p>
         </div>
         <div class="approach-card fade-in">
-          Minimal navigation<br />
-          Full-screen hero<br />
-          Editorial spacing<br />
-          High-end visual tone
+          <span data-lang-block="en">Minimal navigation<br />Full-screen hero<br />Editorial spacing<br />High-end visual tone</span>
+          <span data-lang-block="ka">მინიმალური ნავიგაცია<br />სრული ეკრანის მთავარი ვიზუალი<br />სარედაქციო განლაგება<br />მაღალი დონის ვიზუალური ტონი</span>
         </div>
       </div>
     </section>
@@ -588,35 +471,42 @@
     <section class="section" id="contact">
       <div class="container">
         <div class="contact-card fade-in">
-          <p class="section-label">Contact</p>
+          <p class="section-label"><span data-lang="en">Contact</span><span data-lang="ka">კონტაქტი</span></p>
           <h2 class="section-title">
-            Present MILESTONEDEVELOPMENT with a clear and elegant online presence.
+            <span data-lang="en">Present MILESTONEDEVELOPMENT with a clear and elegant online presence.</span>
+            <span data-lang="ka">წარადგინეთ MILESTONEDEVELOPMENT ნათელი და ელეგანტური ონლაინ იდენტობით.</span>
           </h2>
           <p class="section-text">
-            Replace the sample images and contact details with your real company content, then publish this page as your public site.
+            <span data-lang="en">Replace the sample images and contact details with your real company content, then publish this page as your public site.</span>
+            <span data-lang="ka">შეცვალეთ მაგალითის სურათები და საკონტაქტო ინფორმაცია თქვენი რეალური კომპანიის მონაცემებით, შემდეგ კი გამოაქვეყნეთ გვერდი როგორც საჯარო საიტი.</span>
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="mailto:hello@yourbrand.com">hello@yourbrand.com</a>
-            <a class="button button-secondary" href="#">Download Portfolio</a>
+            <a class="button button-secondary" href="#"><span data-lang="en">Download Portfolio</span><span data-lang="ka">პორტფოლიოს ჩამოტვირთვა</span></a>
           </div>
         </div>
       </div>
     </section>
 
     <script>
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-            }
-          });
-        },
-        { threshold: 0.14 }
-      );
+      document.documentElement.setAttribute("lang-mode", "en");
 
-      document.querySelectorAll(".fade-in").forEach((element) => {
-        observer.observe(element);
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add("visible");
+        });
+      }, { threshold: 0.14 });
+
+      document.querySelectorAll('.fade-in').forEach((element) => observer.observe(element));
+
+      const buttons = document.querySelectorAll('[data-set-lang]');
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const lang = button.getAttribute('data-set-lang');
+          document.documentElement.setAttribute('lang-mode', lang);
+          buttons.forEach((btn) => btn.classList.remove('active'));
+          button.classList.add('active');
+        });
       });
     </script>
   </body>
